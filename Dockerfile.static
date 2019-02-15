@@ -1,10 +1,10 @@
 From node:8.9.4 as static
 
-COPY PyTexas2019 /opt/PyTexas2019
+ENV PATH=$PATH:./node_modules/.bin
+COPY PyTexas /opt/PyTexas
 
-WORKDIR /opt/PyTexas2019
+WORKDIR /opt/PyTexas
 
 RUN set -x \
     && npm install -g npm@latest \
-    && npm install -g gulp-cli parcel-bundler \
     && npm install
