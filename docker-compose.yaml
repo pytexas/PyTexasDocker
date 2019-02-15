@@ -6,8 +6,7 @@ services:
       context: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./PyTexasBackend:/opt/PyTexasBackend
-      - ./PyTexas2019:/opt/PyTexas2019
+      - ./PyTexas:/opt/PyTexas
     ports:
       - "8000:8000"
 
@@ -17,5 +16,5 @@ services:
       dockerfile: Dockerfile.static
     command: gulp watch
     volumes:
-      - ./PyTexas2019:/opt/PyTexas2019
-      - /opt/PyTexas2019/node_modules
+      - ./PyTexas:/opt/PyTexas
+      - /opt/PyTexas/node_modules
